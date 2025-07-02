@@ -44,10 +44,10 @@ function KPIWizard({ onComplete }) {
       <input
         value={answers[step]}
         onChange={handleChange}
-        style={{ width: "90%", marginBottom: 16 }}
+        style={{ width: "96%", marginBottom: 18, fontSize: 20, padding: '14px', borderRadius: 6, border: '1px solid #aaa' }}
         placeholder="ここに入力してください"
       />
-      <button onClick={handleNext} disabled={!answers[step]}>次へ</button>
+      <button onClick={handleNext} disabled={!answers[step]} style={{ fontSize: 18, padding: '10px 28px', borderRadius: 6 }}>次へ</button>
     </div>
   );
 }

@@ -1,0 +1,74 @@
+:root[data-theme='light'][data-style='simple'] {
+  /* シンプル: 白基調・淡色・角丸控えめ */
+  --bg-main: #f8fbff;
+  --bg-panel: #fff;
+  --border-main: #e0e7ef;
+  --accent: #2467b3;
+  --button-bg: #e3edfa;
+  --button-hover: #d2e4fa;
+  --text-main: #222;
+  --input-bg: #fff;
+  --input-border: #e0e7ef;
+}
+
+:root[data-theme='light'][data-style='pop'] {
+  /* ポップ: 明るい色・丸み・太めのアクセント */
+  --bg-main: #fff5f8;
+  --bg-panel: #fff0fa;
+  --border-main: #ffb6d5;
+  --accent: #ff5ca7;
+  --button-bg: linear-gradient(90deg, #ff5ca7 0%, #ffb347 100%);
+  --button-hover: linear-gradient(90deg, #ffb347 0%, #ff5ca7 100%);
+  --text-main: #c2185b;
+  --input-bg: #fff0fa;
+  --input-border: #ffb6d5;
+}
+
+:root[data-theme='light'][data-style='cool'] {
+  /* クール: 青・グレー基調、シャープ */
+  --bg-main: #e3edfa;
+  --bg-panel: #232a34;
+  --border-main: #39495c;
+  --accent: #4a90e2;
+  --button-bg: linear-gradient(90deg, #232a34 0%, #4a90e2 100%);
+  --button-hover: linear-gradient(90deg, #4a90e2 0%, #232a34 100%);
+  --text-main: #e3eaf7;
+  --input-bg: #232a34;
+  --input-border: #39495c;
+}
+
+:root[data-theme='dark'][data-style='simple'] {
+  --bg-main: #232a34;
+  --bg-panel: #181d22;
+  --border-main: #39495c;
+  --accent: #90caf9;
+  --button-bg: #39495c;
+  --button-hover: #232a34;
+  --text-main: #e3eaf7;
+  --input-bg: #232a34;
+  --input-border: #39495c;
+}
+
+:root[data-theme='dark'][data-style='pop'] {
+  --bg-main: #2b1a2f;
+  --bg-panel: #391e4e;
+  --border-main: #ffb6d5;
+  --accent: #ff5ca7;
+  --button-bg: linear-gradient(90deg, #ff5ca7 0%, #ffb347 100%);
+  --button-hover: linear-gradient(90deg, #ffb347 0%, #ff5ca7 100%);
+  --text-main: #fff0fa;
+  --input-bg: #391e4e;
+  --input-border: #ffb6d5;
+}
+
+:root[data-theme='dark'][data-style='cool'] {
+  --bg-main: #151a20;
+  --bg-panel: #232a34;
+  --border-main: #39495c;
+  --accent: #90caf9;
+  --button-bg: linear-gradient(90deg, #232a34 0%, #90caf9 100%);
+  --button-hover: linear-gradient(90deg, #90caf9 0%, #232a34 100%);
+  --text-main: #e3eaf7;
+  --input-bg: #232a34;
+  --input-border: #39495c;
+}

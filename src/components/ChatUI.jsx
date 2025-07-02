@@ -47,10 +47,10 @@ function ChatUI({ steps, currentStep, answers, onAnswer }) {
               <input
                 value={input}
                 onChange={e => setInput(e.target.value)}
-                style={{ width: "80%", marginTop: 12 }}
+                style={{ width: "96%", marginTop: 16, fontSize: 20, padding: '14px', borderRadius: 6, border: '1px solid #aaa' }}
                 placeholder="ここに入力してください"
               />
-              <button type="submit">送信</button>
+              <button type="submit" style={{ fontSize: 18, padding: '10px 28px', marginLeft: 12, borderRadius: 6 }}>送信</button>
             </form>
             {aiMessage && (
               <div style={{ marginTop: 16, color: "#4a90e2" }}>

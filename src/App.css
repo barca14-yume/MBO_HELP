@@ -1,0 +1,114 @@
+body {
+  background: linear-gradient(120deg, #f8fbff 0%, #e3edfa 100%);
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+
+:root[data-theme='dark'] body {
+  background: linear-gradient(120deg, #232a34 0%, #151a20 100%);
+}
+
+:root[data-theme='dark'] .app-container {
+  background: none;
+}
+:root[data-theme='dark'] .left-panel {
+  background: #232a34;
+  border-right: 2px solid #222b36;
+  box-shadow: 2px 0 10px 0 rgba(0,0,0,0.14);
+}
+:root[data-theme='dark'] .right-panel {
+  background: #181d22;
+}
+:root[data-theme='dark'] h2, :root[data-theme='dark'] h3 {
+  color: #90caf9;
+}
+:root[data-theme='dark'] button {
+  background: linear-gradient(90deg, #223a5e 0%, #1e2c47 100%);
+  color: #fff;
+  border: none;
+}
+:root[data-theme='dark'] button:hover {
+  background: linear-gradient(90deg, #1e2c47 0%, #223a5e 100%);
+}
+:root[data-theme='dark'] input, :root[data-theme='dark'] textarea {
+  background: #232a34;
+  color: #e3eaf7;
+  border: 1.5px solid #39495c;
+}
+:root[data-theme='dark'] .progress-bar {
+  background: var(--border-main, #39495c);
+}
+:root[data-theme='dark'] .progress {
+  background: var(--accent, linear-gradient(90deg, #90caf9 0%, #4a90e2 100%));
+}
+:root[data-theme='dark'] textarea {
+  border: 2px solid var(--input-border, #39495c) !important;
+  background: var(--input-bg, #232a34) !important;
+  color: var(--text-main, #e3eaf7) !important;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-main, #f8fbff);
+}
+
+.left-panel {
+  flex: 2;
+  border-right: 2px solid var(--border-main, #e0e7ef);
+  padding: 40px 32px 32px 48px;
+  background: var(--bg-panel, #fafdff);
+  box-shadow: 2px 0 10px 0 rgba(74,144,226,0.03);
+}
+
+.right-panel {
+  flex: 1;
+  padding: 48px 32px 32px 32px;
+  background: var(--bg-panel, #f4f8fc);
+}
+
+h2, h3 {
+  color: var(--accent, #2467b3);
+  font-weight: 700;
+}
+
+button {
+  background: var(--button-bg, linear-gradient(90deg, #4a90e2 0%, #357ab8 100%));
+  color: var(--text-main, #fff);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(74,144,226,0.08);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+button:hover {
+  background: var(--button-hover, linear-gradient(90deg, #357ab8 0%, #4a90e2 100%));
+  box-shadow: 0 4px 16px 0 rgba(74,144,226,0.14);
+}
+
+input, textarea {
+  outline: none;
+  background: var(--input-bg, #fff);
+  color: var(--text-main, #222);
+  border: 1.5px solid var(--input-border, #e0e7ef);
+}
+
+.progress-bar {
+  background: var(--border-main, #e0e7ef);
+  border-radius: 6px;
+  height: 12px;
+  margin-bottom: 16px;
+}
+.progress {
+  background: var(--accent, linear-gradient(90deg, #4a90e2 0%, #6ec6ff 100%));
+  height: 100%;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    padding: 24px 8px;
+  }
+}

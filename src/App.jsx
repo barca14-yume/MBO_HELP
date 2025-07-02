@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ChatUI from "./components/ChatUI";
 import ProgressBar from "./components/ProgressBar";
 import GoalSummary from "./components/GoalSummary";
+import "./App.css";
+import "./themes.css";
 
 const steps = [
   "MBO（定量的な成果目標）",
@@ -21,6 +23,20 @@ function App() {
     const savedStep = localStorage.getItem("mbo_step");
     return savedStep ? parseInt(savedStep, 10) : -1;
   });
+  const [theme, setTheme] = useState("light");
+  const [style, setStyle] = useState("simple");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-style", style);
+  }, [theme, style]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+  const handleStyleChange = (e) => {
+    setStyle(e.target.value);
+  };
 
   const handleAnswer = (text) => {
     const newAnswers = [...answers];
@@ -60,8 +76,18 @@ function App() {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
-      <div style={{ flex: 2, borderRight: "1px solid #eee", padding: 24 }}>
+    <div className="app-container">
+      <div className="left-panel">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginBottom: 16 }}>
+          <button onClick={toggleTheme} style={{ fontSize: 15, padding: '6px 18px', borderRadius: 20, background: theme === 'dark' ? '#39495c' : '#e3edfa', color: theme === 'dark' ? '#fff' : '#2467b3', border: 'none', marginRight: 8 }}>
+            {theme === 'dark' ? '☀ ライトモード' : '🌙 ダークモード'}
+          </button>
+          <select value={style} onChange={handleStyleChange} style={{ fontSize: 15, padding: '6px 18px', borderRadius: 20, background: '#fff', color: '#2467b3', border: '1px solid #e0e7ef', marginLeft: 8 }}>
+            <option value="simple">シンプル</option>
+            <option value="pop">ポップ</option>
+            <option value="cool">クール</option>
+          </select>
+        </div>
         {currentStep === -1 ? (
           <div style={{ textAlign: "center", marginTop: 100 }}>
             <h2>壁打ち型MBO目標アシスタント</h2>
@@ -88,7 +114,7 @@ function App() {
           </>
         )}
       </div>
-      <div style={{ flex: 1, padding: 24 }}>
+      <div className="right-panel">
         {currentStep >= 0 && <ProgressBar current={currentStep} total={steps.length} />}
         <GoalSummary steps={steps} answers={answers} />
       </div>
